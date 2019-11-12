@@ -1,5 +1,5 @@
 module Pronto
-  module Standardrb
+  module StandardrbVersion
     VERSION = "0.1.0"
   end
 end
