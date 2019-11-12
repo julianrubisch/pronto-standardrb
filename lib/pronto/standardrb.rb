@@ -4,10 +4,13 @@ require "standard"
 
 module Pronto
   class Standardrb < Runner
-    def initialize
+    def initialize(_)
+      super
+
       @builds_config = Standard::BuildsConfig.new
+      @loads_runner = Standard::LoadsRunner.new
     end
-    
+
     def run
       return [] unless @patches
 
