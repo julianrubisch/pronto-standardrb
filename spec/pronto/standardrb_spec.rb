@@ -24,7 +24,18 @@ module Pronto
         let(:patches) { [] }
         it { should == [] }
       end
-    end
 
+      context 'patches with smells' do
+        include_context 'test repo'
+
+        let(:patches) { repo.diff('2dec0010') }
+
+        its(:count) { should == 1 }
+
+        it 'includes the offense message' do
+          expect(subject.first.msg).to include('Layout/DefEndAlignment')
+        end
+      end
+    end
   end
 end

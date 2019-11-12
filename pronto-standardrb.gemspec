@@ -30,6 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "standard"
   spec.add_runtime_dependency "pronto"
   spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "pry"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-its", "~> 1.2"
 end

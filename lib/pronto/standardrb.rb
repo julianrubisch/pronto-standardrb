@@ -4,7 +4,7 @@ require "standard"
 
 module Pronto
   class Standardrb < Runner
-    def initialize(_)
+    def initialize(_, _ = nil)
       super
 
       @builds_config = Standard::BuildsConfig.new

@@ -1,4 +1,7 @@
 require "bundler/setup"
+require "pry"
+require "rspec"
+require "rspec/its"
 require "pronto/standardrb"
 require "fileutils"
 
