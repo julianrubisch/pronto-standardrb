@@ -1,34 +1,18 @@
 require "pronto/standardrb/version"
 require "pronto"
+require "pronto/rubocop"
+require "pry"
 require "standard"
 
 module Pronto
-  class Standardrb < Runner
-    def initialize(_, _ = nil)
-      super
+  class Standardrb < Rubocop
+    def initialize(patches, _ = nil)
+      super(patches)
 
       @builds_config = Standard::BuildsConfig.new
-      @loads_runner = Standard::LoadsRunner.new
-    end
 
-    def run
-      return [] unless @patches
-
-      @patches.select { |patch| valid_patch?(patch) }
-              .map { |patch| inspect(patch) }
-              .flatten.compact
-    end
-
-    # copied from rubocop-runner, since standardrb is essentially a wrapper
-    def valid_patch?(patch)
-      return false if patch.additions < 1
-
-      path = patch.new_file_full_path
-
-      ruby_file?(path)
-    end
-
-    def inspect(patch)
+      config = @builds_config.call([])
+      @inspector = ::RuboCop::Runner.new(config.rubocop_options, @config_store)
     end
   end
 end
