@@ -1,8 +1,14 @@
+# Attention!
+
+TLDR: at the moment doesn't work as expected. please wait for bugfix :-)
+
+Due to the inner workings of `pronto`, it seems it's not possible to simply subclass a runner, as I have done here. `require`ing a runner will add it to the runners list, IIUC, thus firing it. Since standard's opinionated config is quite different from rubocops standard config, you'll get inconclusive results.
+
+I'm sorry about the premature release.
+
 # Pronto::Standardrb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pronto/standardrb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[Pronto](https://github.com/prontolabs/pronto) runner for [Standardrb](https://github.com/prontolabs/pronto)
 
 ## Installation
 
