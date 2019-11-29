@@ -30,10 +30,11 @@ module Pronto
 
         let(:patches) { repo.diff('2dec0010') }
 
-        its(:count) { should == 1 }
+        its(:count) { should == 2 }
 
-        it 'includes the offense message' do
-          expect(subject.first.msg).to include('Layout/DefEndAlignment')
+        it 'includes the offense messages' do
+          expect(subject.first.msg).to include('Style/StringLiterals')
+          expect(subject.last.msg).to include('Layout/DefEndAlignment')
         end
       end
     end
