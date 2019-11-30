@@ -1,2 +1,3 @@
 0000000000000000000000000000000000000000 2dec0010df6f2722ee7183253385d8cebd9d7a7c Julian Rubisch <julian@julianrubisch.at> 1573554948 +0100	commit (initial): Initial commit
 2dec0010df6f2722ee7183253385d8cebd9d7a7c aed54e2b40da638a822659eef866a942949075c9 Julian Rubisch <julian@julianrubisch.at> 1573555417 +0100	commit: Add lint errors
+aed54e2b40da638a822659eef866a942949075c9 64aa7204201886bf055f5a02660251be1753331c Julian Rubisch <julian@julianrubisch.at> 1575052385 +0100	commit: Add quotes.rb because standard and default rubocop will differ

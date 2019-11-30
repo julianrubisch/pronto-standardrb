@@ -25,9 +25,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "standard"
   spec.add_runtime_dependency "pronto"
-  spec.add_runtime_dependency "pronto-rubocop"
+  spec.add_runtime_dependency "rubocop"
+  spec.add_runtime_dependency "standard"
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rake", "~> 10.0"
