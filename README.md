@@ -1,11 +1,3 @@
-# Attention!
-
-TLDR: at the moment doesn't work as expected. please wait for bugfix :-)
-
-Due to the inner workings of `pronto`, it seems it's not possible to simply subclass a runner, as I have done here. `require`ing a runner will add it to the runners list, IIUC, thus firing it. Since standard's opinionated config is quite different from rubocops standard config, you'll get inconclusive results.
-
-I'm sorry about the premature release.
-
 # Pronto::Standardrb
 
 [Pronto](https://github.com/prontolabs/pronto) runner for [Standardrb](https://github.com/prontolabs/pronto)
