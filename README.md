@@ -1,6 +1,6 @@
 # Pronto::Standardrb
 
-[Pronto](https://github.com/prontolabs/pronto) runner for [Standardrb](https://github.com/prontolabs/pronto)
+[Pronto](https://github.com/prontolabs/pronto) runner for [Standardrb](https://github.com/testdouble/standard)
 
 ## Installation
 
