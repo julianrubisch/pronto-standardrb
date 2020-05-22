@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pronto-standardrb'
+gem "pronto-standardrb"
 ```
 
 And then execute:
