@@ -1,7 +1,6 @@
 require "pronto/standardrb/version"
 require "pronto"
 require "rubocop"
-require "pry"
 require "standard"
 
 module Pronto
