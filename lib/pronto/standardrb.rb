@@ -23,9 +23,9 @@ module Pronto
       config = builds_config.call([])
 
       @rubocop_config ||= begin
-                            store = config.rubocop_config_store 
-                            store.for(path(patch))
-                          end
+        store = config.rubocop_config_store
+        store.for(path(patch))
+      end
     end
 
     private

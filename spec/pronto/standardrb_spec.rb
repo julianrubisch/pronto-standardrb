@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 module Pronto
   RSpec.describe Standardrb do
@@ -13,28 +13,28 @@ module Pronto
       allow(Pronto::ConfigFile).to receive(:new) { pronto_config }
     end
 
-    describe '#run' do
+    describe "#run" do
       subject { standardrb.run }
 
-      context 'patches are nil' do
+      context "patches are nil" do
         it { should == [] }
       end
 
-      context 'no patches' do
+      context "no patches" do
         let(:patches) { [] }
         it { should == [] }
       end
 
-      context 'patches with smells' do
-        include_context 'test repo'
+      context "patches with smells" do
+        include_context "test repo"
 
-        let(:patches) { repo.diff('2dec0010') }
+        let(:patches) { repo.diff("2dec0010") }
 
         its(:count) { should == 2 }
 
-        it 'includes the offense messages' do
-          expect(subject.first.msg).to include('Style/StringLiterals')
-          expect(subject.last.msg).to include('Layout/DefEndAlignment')
+        it "includes the offense messages" do
+          expect(subject.first.msg).to include("Style/StringLiterals")
+          expect(subject.last.msg).to include("Layout/DefEndAlignment")
         end
       end
     end
