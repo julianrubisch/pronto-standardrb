@@ -7,7 +7,6 @@ module Pronto
   class Standardrb < Runner
     def run
       ruby_patches
-        .select { |patch| patch.additions > 0 }
         .flat_map do |patch|
         offenses(patch).flat_map do |offense|
           patch
