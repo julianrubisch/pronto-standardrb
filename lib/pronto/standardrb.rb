@@ -30,10 +30,13 @@ module Pronto
     private
 
     def processed_source(patch)
-      ::RuboCop::ProcessedSource.from_file(
+      processed_source = ::RuboCop::ProcessedSource.from_file(
         path(patch),
         rubocop_config(patch).target_ruby_version
       )
+      processed_source.registry = registry if processed_source.respond_to?(:registry=)
+      processed_source.config = rubocop_config(patch) if processed_source.respond_to?(:config=)
+      processed_source
     end
 
     def new_message(offense, line)
