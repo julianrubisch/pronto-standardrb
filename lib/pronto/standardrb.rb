@@ -19,7 +19,8 @@ module Pronto
 
     def rubocop_config(patch)
       builds_config = Standard::BuildsConfig.new
-      config = builds_config.call([])
+      # Pass the file path so Standard can find .standard.yml in the project
+      config = builds_config.call([path(patch)])
 
       @rubocop_config ||= begin
         store = config.rubocop_config_store
