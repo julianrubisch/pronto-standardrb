@@ -48,7 +48,8 @@ module Pronto
 
     def offenses(patch)
       team(patch)
-        .inspect_file(processed_source(patch))
+        .investigate(processed_source(patch))
+        .offenses
         .sort
         .reject(&:disabled?)
     end
@@ -58,11 +59,11 @@ module Pronto
     end
 
     def team(patch)
-      @team ||= ::RuboCop::Cop::Team.new(registry, rubocop_config(patch))
+      @team ||= ::RuboCop::Cop::Team.mobilize(registry, rubocop_config(patch))
     end
 
     def registry
-      @registry ||= ::RuboCop::Cop::Registry.new(RuboCop::Cop::Cop.all)
+      @registry ||= ::RuboCop::Cop::Registry.global
     end
 
     def level(severity)
