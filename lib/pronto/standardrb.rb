@@ -6,8 +6,9 @@ require "standard"
 module Pronto
   class Standardrb < Runner
     def run
-      ruby_patches
-        .flat_map do |patch|
+      ruby_patches.flat_map do |patch|
+        next [] unless valid?(patch)
+
         offenses(patch).flat_map do |offense|
           patch
             .added_lines
@@ -28,6 +29,12 @@ module Pronto
     end
 
     private
+
+    def valid?(patch)
+      return false if rubocop_config(patch).file_to_exclude?(path(patch))
+
+      rubocop_config(patch).file_to_include?(path(patch))
+    end
 
     def processed_source(patch)
       processed_source = ::RuboCop::ProcessedSource.from_file(
