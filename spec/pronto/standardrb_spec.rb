@@ -28,6 +28,10 @@ module Pronto
       context "patches with smells" do
         include_context "test repo"
 
+        before do
+          allow(standardrb).to receive(:valid?).and_return(true)
+        end
+
         let(:patches) { repo.diff("2dec0010") }
 
         its(:count) { should == 2 }
